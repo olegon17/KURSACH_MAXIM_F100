@@ -246,6 +246,7 @@ void ADC1_IRQHandler(void)
 void TIM6_DAC_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM6_DAC_IRQn 0 */
+  LL_TIM_ClearFlag_UPDATE(TIM6);
   if(HAL_GPIO_ReadPin(GPIOKEY,KEY_1)==0)
   {
     DREAMTEMP++;
@@ -254,7 +255,6 @@ void TIM6_DAC_IRQHandler(void)
   {
     DREAMTEMP--;
   }
-  LL_TIM_ClearFlag_UPDATE(TIM2);
   LL_ADC_REG_StartConversionSWStart(ADC1);//?????? ?????????????? ???
   /* USER CODE END TIM6_DAC_IRQn 0 */
   

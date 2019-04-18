@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.32.2.178/W32 for ARM                  18/Apr/2019  14:46:19
+# IAR ELF Linker V8.32.2.178/W32 for ARM                  19/Apr/2019  02:09:26
 # Copyright 2007-2018 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,7 +8,7 @@
 #    Map file     =  
 #        D:\STM32\KURSACH_MAXIM_F100\EWARM\KURSACH_MAXIM_F100\List\KURSACH_MAXIM_F100.map
 #    Command line =  
-#        -f C:\Users\Morozov\AppData\Local\Temp\EW6F68.tmp
+#        -f C:\Users\Morozov\AppData\Local\Temp\EWD6DE.tmp
 #        (D:\STM32\KURSACH_MAXIM_F100\EWARM\KURSACH_MAXIM_F100\Obj\global.o
 #        D:\STM32\KURSACH_MAXIM_F100\EWARM\KURSACH_MAXIM_F100\Obj\main.o
 #        D:\STM32\KURSACH_MAXIM_F100\EWARM\KURSACH_MAXIM_F100\Obj\startup_stm32f100xb.o
