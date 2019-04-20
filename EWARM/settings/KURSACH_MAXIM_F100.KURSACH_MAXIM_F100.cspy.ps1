@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\STM32\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.general.xcl" --backend -f "D:\STM32\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.general.xcl" --backend -f "C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\STM32\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.general.xcl" --debug_file=$debugfile --backend -f "D:\STM32\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM\settings\KURSACH_MAXIM_F100.KURSACH_MAXIM_F100.driver.xcl" 
 }

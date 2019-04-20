@@ -23,7 +23,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "global.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -113,8 +113,29 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    
-    
+    if(DISP_MODE==0)
+    {
+       REALTEMP=RESULT/DELITEL;
+       D1=(REALTEMP)/1000%10;
+       D2=(REALTEMP)/100%10;
+       D3=(REALTEMP)/10%10;
+       D4=(REALTEMP)/1%10;
+    }
+     if(DISP_MODE==1)
+     {
+       D1=(DREAMTEMP)/1000%10;
+       D2=(DREAMTEMP)/100%10;
+       D3=(DREAMTEMP)/10%10;
+       D4=(DREAMTEMP)/1%10;
+     }
+    if(REALTEMP>DREAMTEMP)
+    {
+      HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_SET);
+    }
+    else
+    {
+      HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_RESET);
+    }
   }
   /* USER CODE END 3 */
 }
