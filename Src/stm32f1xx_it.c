@@ -57,7 +57,7 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-extern TIM_HandleTypeDef htim7;
+
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -213,17 +213,17 @@ void EXTI1_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles EXTI line2 interrupt.
+  * @brief This function handles EXTI line4 interrupt.
   */
-void EXTI2_IRQHandler(void)
+void EXTI4_IRQHandler(void)
 {
-  /* USER CODE BEGIN EXTI2_IRQn 0 */
+  /* USER CODE BEGIN EXTI4_IRQn 0 */
   DISP_MODE=0;
-  /* USER CODE END EXTI2_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
-  /* USER CODE BEGIN EXTI2_IRQn 1 */
+  /* USER CODE END EXTI4_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
+  /* USER CODE BEGIN EXTI4_IRQn 1 */
 
-  /* USER CODE END EXTI2_IRQn 1 */
+  /* USER CODE END EXTI4_IRQn 1 */
 }
 
 /**
@@ -234,6 +234,7 @@ void ADC1_IRQHandler(void)
   /* USER CODE BEGIN ADC1_IRQn 0 */
   LL_ADC_ClearFlag_EOS(ADC1);//????? ????? ????????? ??????????????
   RESULT = LL_ADC_REG_ReadConversionData12(ADC1);
+  REALTEMP=RESULT/DELITEL;
   /* USER CODE END ADC1_IRQn 0 */
   /* USER CODE BEGIN ADC1_IRQn 1 */
 
@@ -249,11 +250,13 @@ void TIM6_DAC_IRQHandler(void)
   LL_TIM_ClearFlag_UPDATE(TIM6);
   if(HAL_GPIO_ReadPin(GPIOKEY,KEY_1)==0)
   {
-    DREAMTEMP++;
+    if(DREAMTEMP<=1000)
+      DREAMTEMP++;
   }
   if(HAL_GPIO_ReadPin(GPIOKEY,KEY_2)==0)
   {
-    DREAMTEMP--;
+    if(DREAMTEMP>=0)
+      DREAMTEMP--;
   }
   LL_ADC_REG_StartConversionSWStart(ADC1);//?????? ?????????????? ???
   /* USER CODE END TIM6_DAC_IRQn 0 */
@@ -288,7 +291,6 @@ void TIM7_IRQHandler(void)
   }
   num++;
   /* USER CODE END TIM7_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim7);
   /* USER CODE BEGIN TIM7_IRQn 1 */
 
   /* USER CODE END TIM7_IRQn 1 */

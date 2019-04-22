@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=G:/KURSACH_MAXIM_F100/Inc
+HeaderPath=D:/STM32/KURSACH_MAXIM_F100/Inc
 HeaderFiles=stm32f1xx_it.h;stm32_assert.h;stm32f1xx_hal_conf.h;main.h;
-SourcePath=G:/KURSACH_MAXIM_F100/Src
+SourcePath=D:/STM32/KURSACH_MAXIM_F100/Src
 SourceFiles=stm32f1xx_it.c;stm32f1xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]

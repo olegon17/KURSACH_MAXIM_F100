@@ -18,7 +18,7 @@
 #define KEY_1 GPIO_PIN_10
 #define KEY_2 GPIO_PIN_11
 #define NAGREV GPIO_PIN_3
-#define DELITEL 5
+#define DELITEL 4
 extern volatile unsigned int D1,D2,D3,D4,num,REALTEMP,DREAMTEMP,RESULT,DISP_MODE;
 
 static void show(int digit)//DLYA STUD MAKET
