@@ -204,7 +204,9 @@ void SysTick_Handler(void)
 void EXTI1_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI1_IRQn 0 */
+  //B1
   DISP_MODE=1;
+  
   /* USER CODE END EXTI1_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
   /* USER CODE BEGIN EXTI1_IRQn 1 */
@@ -258,6 +260,28 @@ void TIM6_DAC_IRQHandler(void)
     if(DREAMTEMP>=0)
       DREAMTEMP--;
   }
+  if(DISP_MODE==0)
+    {
+       D1=(REALTEMP)/1000%10;
+       D2=(REALTEMP)/100%10;
+       D3=(REALTEMP)/10%10;
+       D4=(REALTEMP)/1%10;
+    }
+     if(DISP_MODE==1)
+     {
+       D1=(DREAMTEMP)/1000%10;
+       D2=(DREAMTEMP)/100%10;
+       D3=(DREAMTEMP)/10%10;
+       D4=(DREAMTEMP)/1%10;
+     }
+    if(REALTEMP>DREAMTEMP)
+    {
+      HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_SET);
+    }
+    else
+    {
+      HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_RESET);
+    }
   LL_ADC_REG_StartConversionSWStart(ADC1);//?????? ?????????????? ???
   /* USER CODE END TIM6_DAC_IRQn 0 */
   

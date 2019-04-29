@@ -20,12 +20,18 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>135135406</Checksum>
+        <Checksum>3277805407</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
         <StopOnThrow>_ 0</StopOnThrow>
     </Exceptions>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Disassembly>
+        <MixedMode>1</MixedMode>
+    </Disassembly>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -35,12 +41,6 @@
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
-    <CallStack>
-        <ShowArgs>0</ShowArgs>
-    </CallStack>
-    <Disassembly>
-        <MixedMode>1</MixedMode>
-    </Disassembly>
     <CallStackLog>
         <Enabled>0</Enabled>
     </CallStackLog>
@@ -51,7 +51,11 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Count>0</Count>
+        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\stm32f1xx_it.c}.256.7" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp1>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\stm32f1xx_it.c}.260.5" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\stm32f1xx_it.c}.255.5" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\stm32f1xx_it.c}.283.7" 0 0 1 "" 0 "" 0</Bp3>
+        <Count>4</Count>
     </Breakpoints2>
     <Aliases>
         <Count>0</Count>

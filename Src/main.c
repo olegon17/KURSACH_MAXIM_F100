@@ -111,28 +111,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    if(DISP_MODE==0)
-    {
-       D1=(REALTEMP)/1000%10;
-       D2=(REALTEMP)/100%10;
-       D3=(REALTEMP)/10%10;
-       D4=(REALTEMP)/1%10;
-    }
-     if(DISP_MODE==1)
-     {
-       D1=(DREAMTEMP)/1000%10;
-       D2=(DREAMTEMP)/100%10;
-       D3=(DREAMTEMP)/10%10;
-       D4=(DREAMTEMP)/1%10;
-     }
-    if(REALTEMP>DREAMTEMP)
-    {
-      HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_SET);
-    }
-    else
-    {
-      HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_RESET);
-    }
+    
   }
   /* USER CODE END 3 */
 }
@@ -328,8 +307,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PB1 */
-  GPIO_InitStruct.Pin = GPIO_PIN_1;
+  /*Configure GPIO pins : PB1 PB4 */
+  GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_4;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -347,12 +326,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PB4 */
-  GPIO_InitStruct.Pin = GPIO_PIN_4;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
