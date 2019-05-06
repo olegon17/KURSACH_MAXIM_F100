@@ -1,33 +1,41 @@
-"D:\STM32\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_gpio.c"
+"C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_ll_gpio.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-D:\STM32\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Src
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Src
 -I
-D:\STM32\KURSACH_MAXIM_F100\EWARM/../Inc
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM/../Inc
 -I
-D:\STM32\KURSACH_MAXIM_F100\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc
 -I
-D:\STM32\KURSACH_MAXIM_F100\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy
 -I
-D:\STM32\KURSACH_MAXIM_F100\EWARM/../Drivers/CMSIS/Device/ST/STM32F1xx/Include
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM/../Drivers/CMSIS/Device/ST/STM32F1xx/Include
 -I
-D:\STM32\KURSACH_MAXIM_F100\EWARM/../Drivers/CMSIS/Include
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\EWARM/../Drivers/CMSIS/Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\Core\Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\DSP\Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\inc\c
 -I
-D:\STM32\KURSACH_MAXIM_F100\Inc
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\Inc
 -I
-D:\STM32\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Inc
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Inc
 -I
-D:\STM32\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\Drivers\STM32F1xx_HAL_Driver\Inc\Legacy
 -I
-D:\STM32\KURSACH_MAXIM_F100\Drivers\CMSIS\Device\ST\STM32F1xx\Include
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\Drivers\CMSIS\Device\ST\STM32F1xx\Include
 -I
-D:\STM32\KURSACH_MAXIM_F100\Drivers\CMSIS\Include
+C:\Users\Morozov\Documents\KURSACH_MAXIM_F100\Drivers\CMSIS\Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\Core\Include
+-I
+C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\DSP\Include
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -305,6 +313,7 @@ D:\STM32\KURSACH_MAXIM_F100\Drivers\CMSIS\Include
 -DUSE_FULL_LL_DRIVER=1
 -DUSE_HAL_DRIVER=1
 -DSTM32F100xB=1
+-DARM_MATH_CM3=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.2\\arm\\inc\\c\\DLib_Config_Full.h"
 -D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.2\\arm\\inc\\c\\DLib_Config_Full.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V8.32.2.178/W32 for ARM"

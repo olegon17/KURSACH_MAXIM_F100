@@ -18,9 +18,12 @@
 #define KEY_1 GPIO_PIN_10
 #define KEY_2 GPIO_PIN_11
 #define NAGREV GPIO_PIN_3
-#define DELITEL 4
-extern volatile unsigned int D1,D2,D3,D4,num,REALTEMP,DREAMTEMP,RESULT,DISP_MODE;
-
+#define Rm 2000
+#define beta  3988
+#define Ro 3000
+extern volatile unsigned int D1,D2,D3,D4,num,RESULT,DISP_MODE;
+extern volatile int OUT;
+extern volatile double REALTEMP,DREAMTEMP,Rt,Vadc,T;
 static void show(int digit)//DLYA STUD MAKET
 {
   HAL_GPIO_WritePin(GPIOSEG, A|B|C|D|E|F|G|DP, GPIO_PIN_RESET);
@@ -106,3 +109,4 @@ static void select(int digit)
 		}
          }
 }
+

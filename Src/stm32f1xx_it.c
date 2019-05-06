@@ -24,6 +24,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "global.h"
+#include <arm_math.h>
+#include <math.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +45,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+double eps=0.01, logarithm = 0, ai = 1, p = 1, x=0;
+int n = 1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -235,8 +238,16 @@ void ADC1_IRQHandler(void)
 {
   /* USER CODE BEGIN ADC1_IRQn 0 */
   LL_ADC_ClearFlag_EOS(ADC1);//????? ????? ????????? ??????????????
-  RESULT = LL_ADC_REG_ReadConversionData12(ADC1);
-  REALTEMP=RESULT/DELITEL;
+  int value = LL_ADC_REG_ReadConversionData12(ADC1);
+  Vadc=(3.3*value)/4096;
+  Rt=(Rm*Vadc)/(3.3-Vadc);
+  
+  float32_t f_input_cmsis_dsp = Rt/Ro;
+  float32_t log;
+  
+  arm_sqrt_f32(f_input_cmsis_dsp,&log);
+ 
+  REALTEMP=beta/(log+beta/298);
   /* USER CODE END ADC1_IRQn 0 */
   /* USER CODE BEGIN ADC1_IRQn 1 */
 
@@ -253,27 +264,26 @@ void TIM6_DAC_IRQHandler(void)
   if(HAL_GPIO_ReadPin(GPIOKEY,KEY_1)==0)
   {
     if(DREAMTEMP<=1000)
-      DREAMTEMP++;
+      DREAMTEMP+=0.1;
   }
   if(HAL_GPIO_ReadPin(GPIOKEY,KEY_2)==0)
   {
     if(DREAMTEMP>=0)
-      DREAMTEMP--;
+      DREAMTEMP-=0.1;
   }
+  
   if(DISP_MODE==0)
     {
-       D1=(REALTEMP)/1000%10;
-       D2=(REALTEMP)/100%10;
-       D3=(REALTEMP)/10%10;
-       D4=(REALTEMP)/1%10;
+      OUT=(REALTEMP*10);
     }
      if(DISP_MODE==1)
      {
-       D1=(DREAMTEMP)/1000%10;
-       D2=(DREAMTEMP)/100%10;
-       D3=(DREAMTEMP)/10%10;
-       D4=(DREAMTEMP)/1%10;
+       OUT=(REALTEMP*10);
      }
+       D1=(OUT)/1000%10;
+       D2=(OUT)/100%10;
+       D3=(OUT)/10%10;
+       D4=(OUT)/1%10;
     if(REALTEMP>DREAMTEMP)
     {
       HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_SET);
@@ -283,6 +293,7 @@ void TIM6_DAC_IRQHandler(void)
       HAL_GPIO_WritePin(GPIOB, NAGREV, GPIO_PIN_RESET);
     }
   LL_ADC_REG_StartConversionSWStart(ADC1);//?????? ?????????????? ???
+  
   /* USER CODE END TIM6_DAC_IRQn 0 */
   
   /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
