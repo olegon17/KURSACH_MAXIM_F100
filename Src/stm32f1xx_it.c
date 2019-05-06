@@ -45,8 +45,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-double eps=0.01, logarithm = 0, ai = 1, p = 1, x=0;
-int n = 1;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

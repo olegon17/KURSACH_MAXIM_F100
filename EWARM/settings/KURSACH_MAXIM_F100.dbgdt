@@ -746,7 +746,7 @@
                     <item>DREAMTEMP</item>
                     <item>DISP_MODE</item>
                     <item>RESULT</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
